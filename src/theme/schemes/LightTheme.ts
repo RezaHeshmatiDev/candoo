@@ -3,14 +3,14 @@ import '@mui/lab/themeAugmentation';
 
 
 const themeColors = {
-  primary: '#CB3C1D',
+  primary: '#3ca7d0',
   secondary: '#A1A1A1',
   success: '#57CA22',
   warning: '#FFA319',
   error: '#FF1943',
   info: '#33C2FF',
-  black: '#FFFFFF',
-  white: '#252525',
+  black: '#252525',
+  white: '#ffffff',
   primaryAlt: '#090A0C',
   trueWhite: '#ffffff'
 };
@@ -130,6 +130,7 @@ export const LightTheme = createTheme({
     },
     background: {
       paper: colors.alpha.white[100],
+      default: colors.alpha.white[100]
     },
   },
   breakpoints: {
