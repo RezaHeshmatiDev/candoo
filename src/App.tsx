@@ -1,9 +1,10 @@
+import Login from "./pages/Login/Login";
 import ThemeProvider from "./theme/ThemeProvider";
 
 const App = () => {
   return (
     <ThemeProvider>
-      <p>Hello</p>
+      <Login />
     </ThemeProvider>
   );
 };
