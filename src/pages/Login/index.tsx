@@ -41,6 +41,7 @@ const Login = () => {
           title={"فرم ورودی کاربر"}
           titleTypographyProps={{
             textAlign: "center",
+            color: theme.palette.common.white,
           }}
         />
         <CardContent>
@@ -73,8 +74,7 @@ const Login = () => {
           >
             <Typography>{"رمز عبور"}</Typography>
           </TextField>
-          {/* <Checkbox title="مرا بخاطر بسپار" /> */}
-          <FormGroup sx={{ paddingX: 1 }}>
+          <FormGroup sx={{ paddingX: 1, direction: "ltr" }}>
             <FormControlLabel
               control={
                 <Checkbox color="primary" name="remember-me" size="small" />

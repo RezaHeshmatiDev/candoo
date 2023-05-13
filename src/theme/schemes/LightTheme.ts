@@ -126,12 +126,21 @@ export const LightTheme = createTheme({
     text: {
       primary: colors.alpha.black[100],
       secondary: colors.alpha.black[70],
-      disabled: colors.alpha.black[50]
+      disabled: colors.alpha.black[50],
     },
     background: {
       paper: colors.alpha.white[100],
       default: colors.alpha.white[100]
     },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          color: colors.alpha.white[100]
+        }
+      },
+    }
   },
   breakpoints: {
     values: {
