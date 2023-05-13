@@ -35,7 +35,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.21.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.21.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7":
   version "7.21.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.5.tgz#8492dddda9644ae3bda3b45eabe87382caee7200"
   integrity sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==
@@ -318,6 +318,15 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
+
+"@loadable/component@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@loadable/component/-/component-5.15.3.tgz#7de7dcbdbf3db3799bf48d58cfcbae7a18d1818c"
+  integrity sha512-VOgYgCABn6+/7aGIpg7m0Ruj34tGetaJzt4bQ345FwEovDQZ+dua+NWLmuJKv8rWZyxOUSfoJkmGnzyDXH2BAQ==
+  dependencies:
+    "@babel/runtime" "^7.7.7"
+    hoist-non-react-statics "^3.3.1"
+    react-is "^16.12.0"
 
 "@mui/base@5.0.0-alpha.128":
   version "5.0.0-alpha.128"
@@ -968,6 +977,11 @@ css-vendor@^2.0.8:
   dependencies:
     "@babel/runtime" "^7.8.3"
     is-in-browser "^1.0.2"
+
+cssjanus@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/cssjanus/-/cssjanus-2.1.0.tgz#6f99070e0b7cc79f826ea48c63c03cb250713af1"
+  integrity sha512-kAijbny3GmdOi9k+QT6DGIXqFvL96aksNlGr4Rhk9qXDZYWUojU4bRc3IHWxdaLNOqgEZHuXoe5Wl2l7dxLW5g==
 
 csstype@^3.0.2, csstype@^3.1.2:
   version "3.1.2"
@@ -1933,7 +1947,7 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-is@^16.13.1, react-is@^16.7.0:
+react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -2146,6 +2160,13 @@ strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+
+stylis-plugin-rtl@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/stylis-plugin-rtl/-/stylis-plugin-rtl-2.1.1.tgz#16707809c878494835f77e5d4aadaae3db639b5e"
+  integrity sha512-q6xIkri6fBufIO/sV55md2CbgS5c6gg9EhSVATtHHCdOnbN/jcI0u3lYhNVeuI65c4lQPo67g8xmq5jrREvzlg==
+  dependencies:
+    cssjanus "^2.0.1"
 
 stylis@4.2.0:
   version "4.2.0"
