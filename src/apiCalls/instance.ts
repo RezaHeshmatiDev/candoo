@@ -1,10 +1,9 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 import { getToken, removeToken } from "../utils/tokenFuncs";
 
-//TODO:add baseURL later
 const instance:()=>AxiosInstance = () =>
   axios.create({
-    // baseURL: ,
+    baseURL: import.meta.env.BASE_URL,
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -21,7 +20,7 @@ instance().interceptors.response.use((res:AxiosResponse)=>{
        removeToken();
        window.location.href="/";
     }
-    return res;
+    return res.data;
 })
 
 export default instance;
