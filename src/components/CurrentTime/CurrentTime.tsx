@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from "react";
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 
 import { getCurrentTime } from "../../utils/Functions";
 
 const CurrentTime = () => {
   const [currentTime, setCurrentTime] = useState<string>(getCurrentTime());
   const timeInterval = useRef<any>(null);
+
+  const theme = useTheme();
 
   useEffect(() => {
     intervalToCurrentTime();
@@ -22,7 +24,11 @@ const CurrentTime = () => {
     }, 1000);
   };
 
-  return <Typography>{currentTime}</Typography>;
+  return (
+    <Typography color={theme.palette.common.white} variant={"caption"}>
+      {currentTime}
+    </Typography>
+  );
 };
 
 export default CurrentTime;

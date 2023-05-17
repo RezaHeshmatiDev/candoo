@@ -1,10 +1,12 @@
-import { Box, Typography, Button, Grid } from "@mui/material";
+import { Box, Typography, Button, Grid, useTheme } from "@mui/material";
 
 import Logo from "../../assets/images/logo.avif";
 import { getCurrentDate } from "../../utils/Functions";
 import CurrentTime from "../CurrentTime/CurrentTime";
 
 const Content = () => {
+  const theme = useTheme();
+
   const user = {
     name: "امیر ثریایی",
   };
@@ -41,43 +43,77 @@ const Content = () => {
   ];
 
   return (
-    <Box
-      display={"flex"}
-      flexDirection={"column"}
-      alignItems={"center"}
-      justifyContent={"center"}
-    >
-      <Typography>{"سیستم آرمان (کندو)"}</Typography>
-      <img
-        src={Logo}
-        alt="logo"
-        width={60}
-        height={60}
-        style={{ borderRadius: "50%" }}
-      />
-      <Box display={"flex"} alignItems={"center"}>
-        <Typography mr={1}>{user.name}</Typography>
-        <Typography>{":کاربر وارد شده"}</Typography>
-      </Box>
+    <Grid>
       <Box
         display={"flex"}
+        flexDirection={"column"}
         alignItems={"center"}
-        justifyContent={"space-between"}
+        justifyContent={"center"}
+        p={1}
+        pt={6}
+        sx={{ backgroundColor: theme.palette.secondary.main }}
       >
-        <Typography>{getCurrentDate("monthByNumber")}</Typography>
-        <CurrentTime />
+        <Typography
+          color={theme.palette.common.white}
+          mb={2}
+          variant={"caption"}
+        >
+          {"سیستم آرمان (کندو)"}
+        </Typography>
+        <img
+          src={Logo}
+          alt="logo"
+          width={60}
+          height={60}
+          style={{ borderRadius: "50%" }}
+        />
+        <Box display={"flex"} alignItems={"center"} mt={2}>
+          <Typography
+            color={theme.palette.common.white}
+            variant={"caption"}
+            mr={0.5}
+          >
+            {user.name}
+          </Typography>
+          <Typography color={theme.palette.common.white} variant={"caption"}>
+            {":کاربر وارد شده"}
+          </Typography>
+        </Box>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          width={"100%"}
+          mt={2}
+        >
+          <Typography color={theme.palette.common.white} variant={"caption"}>
+            {getCurrentDate("monthByNumber")}
+          </Typography>
+          <CurrentTime />
+        </Box>
       </Box>
-
-      {drawerList.map((item) => {
-        return (
-          <Button fullWidth key={item.id} sx={{ paddingX: 2 }}>
-            <Typography textAlign={"right"} sx={{ width: "100%" }}>
-              {item.title}
-            </Typography>
-          </Button>
-        );
-      })}
-    </Box>
+      <Box m={1}>
+        {drawerList.map((item) => {
+          return (
+            <Button
+              fullWidth
+              key={item.id}
+              sx={{ paddingX: 1 }}
+              onClick={item.onClick}
+            >
+              <Typography
+                variant={"button"}
+                textAlign={"right"}
+                sx={{ width: "100%" }}
+                color={theme.palette.secondary.contrastText}
+              >
+                {item.title}
+              </Typography>
+            </Button>
+          );
+        })}
+      </Box>
+    </Grid>
   );
 };
 
