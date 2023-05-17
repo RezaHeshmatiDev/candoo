@@ -1,9 +1,8 @@
 import { Box, Grid, Card, Typography, useTheme } from "@mui/material";
 
-import ReactIcon from "../../assets/react.svg";
+import LogoIcon from "../../assets/images/logo.avif";
 
 import Header from "../../components/Header/Header";
-import Drawer from "../../components/Drawer/Drawer";
 
 interface HomeItem {
   icon?: string;
@@ -37,8 +36,8 @@ const Home = () => {
         bottom: 0,
       }}
     >
-      <Header title={"سیستم آرمان (کندو)"} />
-      {/* <Grid container spacing={1.5} padding={1.5}>
+      <Header title={"سیستم آرمان (کندو)"} hasMenu hasPrint hasBack={false} />
+      <Grid container spacing={1.5} padding={1.5}>
         {items.map((item, index) => {
           return (
             <Grid
@@ -58,18 +57,21 @@ const Home = () => {
               >
                 {!!item.icon && (
                   <Box mb={0.5}>
-                    <img alt={item.title} src={ReactIcon} />
+                    <img
+                      alt={item.title}
+                      src={LogoIcon}
+                      width={50}
+                      height={50}
+                      style={{ borderRadius: "50%" }}
+                    />
                   </Box>
                 )}
-                <Typography>{item.title}</Typography>
+                <Typography variant={"button"}>{item.title}</Typography>
               </Card>
             </Grid>
           );
         })}
-      </Grid> */}
-      <Drawer>
-        <p>Hiiii</p>
-      </Drawer>
+      </Grid>
     </Box>
   );
 };

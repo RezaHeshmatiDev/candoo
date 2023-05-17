@@ -4,18 +4,28 @@ import MenuIcon from "@mui/icons-material/Menu";
 import PrintIcon from "@mui/icons-material/Print";
 import { HeaderHeight } from "../../utils/Constants";
 import Drawer from "../Drawer/Drawer";
+import { useNavigate } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
-interface Props {
+export interface HeaderProps {
   title: string;
+  hasMenu?: boolean;
+  hasPrint?: boolean;
+  hasBack?: boolean;
 }
 
-const Header = ({ title }: Props) => {
+const Header = ({ title, hasMenu, hasPrint, hasBack = true }: HeaderProps) => {
   const drawerRef = useRef<any>(null);
+  const navigate = useNavigate();
 
   const theme = useTheme();
 
   const toggleMenu = () => {
     drawerRef.current.toggleDrawer();
+  };
+
+  const back = () => {
+    navigate(-1);
   };
 
   return (
@@ -31,14 +41,13 @@ const Header = ({ title }: Props) => {
           color: theme.palette.common.white,
         }}
       >
-        <Box flex={0.28} onClick={toggleMenu}>
-          <MenuIcon />
-        </Box>
+        <Box flex={0.28}>{hasMenu && <MenuIcon onClick={toggleMenu} />}</Box>
         <Box flex={1} display={"flex"} justifyContent={"center"}>
           <Typography>{title}</Typography>
         </Box>
         <Box flex={0.28} display={"flex"} justifyContent={"flex-end"}>
-          <PrintIcon />
+          {hasPrint && <PrintIcon />}
+          {hasBack && <ArrowBackIcon onClick={back} />}
         </Box>
       </Grid>
 
