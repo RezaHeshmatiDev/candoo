@@ -3,8 +3,13 @@ import '@mui/lab/themeAugmentation';
 
 
 const themeColors = {
+<<<<<<< Updated upstream
   primary: '#3ca7d0',
   secondary: '#A1A1A1',
+=======
+  primary: '#2196f3',
+  secondary: '#8485b3',
+>>>>>>> Stashed changes
   success: '#57CA22',
   warning: '#FFA319',
   error: '#FF1943',
@@ -92,12 +97,14 @@ export const LightTheme = createTheme({
     primary: {
       light: colors.primary.light,
       main: colors.primary.main,
-      dark: colors.primary.dark
+      dark: colors.primary.dark,
+      contrastText: themeColors.trueWhite,
     },
     secondary: {
       light: colors.secondary.light,
       main: colors.secondary.main,
-      dark: colors.secondary.dark
+      dark: colors.secondary.dark,
+      contrastText: themeColors.black,
     },
     error: {
       light: colors.error.light,
@@ -132,6 +139,9 @@ export const LightTheme = createTheme({
       paper: colors.alpha.white[100],
       default: colors.alpha.white[100]
     },
+  },
+  typography: {
+    fontFamily: "SNM",
   },
   components: {
     MuiButton: {
