@@ -3,20 +3,23 @@ import { Box, Grid, Card, Typography, useTheme } from "@mui/material";
 import LogoIcon from "../../assets/images/logo.avif";
 
 import Header from "../../components/Header/Header";
+import { useNavigate } from "react-router";
 
 interface HomeItem {
   icon?: string;
   title: string;
-  onClick?(): void;
+  route?: string;
 }
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const theme = useTheme();
 
   const items: HomeItem[] = [
     { title: "مشتریان ارسال نشده: 0" },
     { title: "سفارشات ارسال نشده: 0" },
-    { icon: "something", title: "دریافت اطلاعات" },
+    { icon: "something", title: "دریافت اطلاعات", route: "/information" },
     { icon: "something", title: "سفارشات" },
     { icon: "something", title: "مشتریان" },
     { icon: "something", title: "تحویل سمپل ها" },
@@ -39,12 +42,17 @@ const Home = () => {
       <Header title={"سیستم آرمان (کندو)"} hasMenu hasPrint hasBack={false} />
       <Grid container spacing={1.5} padding={1.5}>
         {items.map((item, index) => {
+          const onClickItem = () => {
+            if (item.route) navigate(item.route);
+          };
+
           return (
             <Grid
               key={item.title}
               item
               xs={6}
               minWidth={index === items.length - 1 ? "100%" : "auto"}
+              onClick={onClickItem}
             >
               <Card
                 sx={{
