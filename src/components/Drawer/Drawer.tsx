@@ -1,12 +1,8 @@
-import { ReactNode, forwardRef, useImperativeHandle, useState } from "react";
+import { forwardRef, useImperativeHandle, useState } from "react";
 import { Drawer as MaterialDrawer } from "@mui/material";
 import Content from "./Content";
 
-interface Props {
-  children: ReactNode | ReactNode[];
-}
-
-const Drawer = forwardRef(({ children }: Props, ref) => {
+const Drawer = forwardRef((_props, ref) => {
   const [open, setOpen] = useState<boolean>(false);
 
   useImperativeHandle(ref, () => ({

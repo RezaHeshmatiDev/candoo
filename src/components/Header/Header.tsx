@@ -35,6 +35,8 @@ const Header = ({ title, hasMenu, hasPrint, hasBack = true }: HeaderProps) => {
         alignItems={"center"}
         display={"flex"}
         paddingX={2}
+        position={"fixed"}
+        top={0}
         height={HeaderHeight}
         sx={{
           backgroundColor: theme.palette.primary.main,
@@ -51,9 +53,7 @@ const Header = ({ title, hasMenu, hasPrint, hasBack = true }: HeaderProps) => {
         </Box>
       </Grid>
 
-      <Drawer ref={drawerRef}>
-        <p>Hello</p>
-      </Drawer>
+      <Drawer ref={drawerRef} />
     </>
   );
 };
