@@ -8,6 +8,7 @@ import loadable from "@loadable/component";
 
 import SuspenseComponent from "../components/Suspense/Suspense";
 import Information from "../pages/Information/Index";
+import Customers from "../pages/Customers";
 
 /**
  * Lazy imports components
@@ -30,6 +31,11 @@ const MainRouter = () => {
            * Information
            */}
           <Route path="/information" element={<Information />} />
+
+          {/**
+           * Customers
+           */}
+          <Route path="/customers" element={<Customers />} />
 
           {/**
            Page 404 not found
