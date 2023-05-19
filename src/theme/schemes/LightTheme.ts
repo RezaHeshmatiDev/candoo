@@ -145,6 +145,14 @@ export const LightTheme = createTheme({
           color: colors.alpha.white[100]
         }
       },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          color: colors.alpha.white[100],
+          backgroundColor: colors.alpha.white[100],
+        }
+      }
     }
   },
   breakpoints: {
