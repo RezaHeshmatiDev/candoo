@@ -21,7 +21,7 @@ const Home = () => {
     { title: "سفارشات ارسال نشده: 0" },
     { icon: "something", title: "دریافت اطلاعات", route: "/information" },
     { icon: "something", title: "سفارشات" },
-    { icon: "something", title: "مشتریان" },
+    { icon: "something", title: "مشتریان", route: "/customers" },
     { icon: "something", title: "تحویل سمپل ها" },
     { icon: "something", title: "کاتالوگ" },
     { icon: "something", title: "ثبت اسناد دریافتی" },

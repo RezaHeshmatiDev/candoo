@@ -1,10 +1,25 @@
+import SearchIcon from "@mui/icons-material/Search";
+import AddIcon from "@mui/icons-material/Add";
+import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
+
 import TopTabbar from "../../components/Tabbar/TopTabbar";
 import Marketer from "./Marketer";
 
 const Customers = () => {
+  const actions = (
+    <>
+      <SearchIcon />
+      <AddIcon sx={{ mx: 1 }} />
+      <AccessAlarmIcon />
+    </>
+  );
+
   return (
     <TopTabbar
-      headerTitle={"مشتریان"}
+      headerProps={{
+        title: "مشتریان",
+        rightContent: actions,
+      }}
       tabs={[
         {
           label: "برنامه بازاریاب",

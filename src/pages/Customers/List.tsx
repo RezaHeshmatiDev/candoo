@@ -134,7 +134,9 @@ const TagsLabelItem = ({ title, icon }: { title: string; icon: any }) => {
   const Icon = icon;
   return (
     <Box sx={sx}>
-      <Typography variant="caption">{title}</Typography>
+      <Typography ml={0.5} variant="caption">
+        {title}
+      </Typography>
       <Icon fontSize="small" />
     </Box>
   );
