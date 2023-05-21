@@ -3,16 +3,17 @@ import { AppBar, Paper, Tab, Tabs, Typography } from "@mui/material";
 
 import Page from "../Page/Page";
 import { HeaderHeight } from "../../utils/Constants";
+import { HeaderProps } from "../Header/Header";
 
 interface Props {
-  headerTitle: string;
+  headerProps: HeaderProps;
   tabs: {
     component: any;
     label: string;
   }[];
 }
 
-const TopTabbar = ({ tabs, headerTitle }: Props) => {
+const TopTabbar = ({ tabs, headerProps }: Props) => {
   const [value, setValue] = useState<number>(0);
 
   const handleChange = (newValue: number) => {
@@ -20,7 +21,7 @@ const TopTabbar = ({ tabs, headerTitle }: Props) => {
   };
 
   return (
-    <Page title={headerTitle}>
+    <Page {...headerProps}>
       <AppBar
         position="fixed"
         style={{ marginTop: HeaderHeight, boxShadow: "none" }}
