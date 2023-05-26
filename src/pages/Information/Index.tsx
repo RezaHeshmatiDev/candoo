@@ -151,12 +151,12 @@ const Container = ({ item }: { item: ListItem }) => {
           {item.options.map((option) => {
             return (
               <Grid
+                key={option.id}
                 display={"flex"}
                 flexDirection={"column"}
                 alignItems={"center"}
                 item
                 xs={item.options.length > 1 ? 6 : 12}
-                key={option.id}
               >
                 <Button size={"large"} variant={"contained"} fullWidth>
                   <Typography variant="caption">{option.title}</Typography>

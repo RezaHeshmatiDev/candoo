@@ -9,6 +9,7 @@ import loadable from "@loadable/component";
 import SuspenseComponent from "../components/Suspense/Suspense";
 import Information from "../pages/Information/Index";
 import Customers from "../pages/Customers";
+import Auth from "../pages/Auth";
 
 /**
  * Lazy imports components
@@ -26,6 +27,11 @@ const MainRouter = () => {
            */}
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
+
+          {/**
+           * Authentication
+           */}
+          <Route path="/auth" element={<Auth />} />
 
           {/**
            * Information

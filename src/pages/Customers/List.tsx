@@ -19,7 +19,7 @@ const List = () => {
   return (
     <Box pb={6}>
       {CustomersData.data.map((customer) => {
-        return <Item customer={customer} />;
+        return <Item key={customer.id} customer={customer} />;
       })}
       <TagsLabel />
     </Box>
