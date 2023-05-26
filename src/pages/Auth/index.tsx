@@ -16,7 +16,7 @@ import {
 import PersonIcon from "@mui/icons-material/Person";
 import LockIcon from "@mui/icons-material/Lock";
 
-const Login = () => {
+const Auth = () => {
   const theme = useTheme();
 
   const BoxWrapper = styled(Box)(
@@ -57,9 +57,7 @@ const Login = () => {
                 </InputAdornment>
               ),
             }}
-          >
-            <Typography>{"نام کاربری"}</Typography>
-          </TextField>
+          />
           <TextField
             fullWidth
             size="small"
@@ -71,9 +69,7 @@ const Login = () => {
                 </InputAdornment>
               ),
             }}
-          >
-            <Typography>{"رمز عبور"}</Typography>
-          </TextField>
+          />
           <FormGroup sx={{ paddingX: 1, direction: "ltr" }}>
             <FormControlLabel
               control={
@@ -94,4 +90,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Auth;
