@@ -4,6 +4,7 @@ import loadable from "@loadable/component";
 import { HeaderProps } from "../../components/Header/Header";
 import { ReactNode } from "react";
 import { ResponsivePropertyParams } from "@mui/material/styles/cssUtils";
+import { HeaderHeight } from "../../utils/Constants";
 
 /**
  * Lazy import components
@@ -19,7 +20,9 @@ const Page = ({ children, sx, ...props }: Props) => {
   return (
     <>
       <Header {...props} />
-      <Box sx={sx}>{children}</Box>
+      <Box sx={sx} style={{ marginTop: HeaderHeight }}>
+        {children}
+      </Box>
     </>
   );
 };

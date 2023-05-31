@@ -9,6 +9,7 @@ import loadable from "@loadable/component";
 import SuspenseComponent from "../components/Suspense/Suspense";
 import Information from "../pages/Information/Index";
 import Customers from "../pages/Customers";
+import CustomerDetails from "../pages/Customers/Details";
 import Auth from "../pages/Auth";
 
 /**
@@ -42,6 +43,7 @@ const MainRouter = () => {
            * Customers
            */}
           <Route path="/customers" element={<Customers />} />
+          <Route path="/customers/details/:id" element={<CustomerDetails />} />
 
           {/**
            Page 404 not found

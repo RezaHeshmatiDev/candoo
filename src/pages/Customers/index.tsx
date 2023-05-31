@@ -7,6 +7,7 @@ import TopTabbar from "../../components/Tabbar/TopTabbar";
 import Marketer from "./Marketer";
 import CustomerSearch from "../../components/CustomerSearch/CustomerSearch";
 import AddCustomer from "../../components/AddCustomer/AddCustomer";
+import { Button } from "@mui/material";
 
 const Customers = () => {
   const customerSearchRef = useRef<any>(null);
@@ -58,6 +59,21 @@ const Customers = () => {
 
       <CustomerSearch ref={customerSearchRef} />
       <AddCustomer ref={addCustomerRef} />
+
+      <Button
+        variant="contained"
+        sx={{
+          position: "fixed",
+          bottom: "65px",
+          right: "10px",
+          borderRadius: "50%",
+          width: "50px",
+          height: "50px",
+          minWidth: "auto",
+        }}
+      >
+        <AddIcon onClick={onClickAdd} />
+      </Button>
     </>
   );
 };

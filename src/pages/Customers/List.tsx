@@ -4,7 +4,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
 
-import CustomersData from "./Customers.json";
+import Customers from "./Customers.json";
+import { useNavigate } from "react-router-dom";
 
 interface Customer {
   id: number;
@@ -17,8 +18,8 @@ interface Customer {
 
 const List = () => {
   return (
-    <Box pb={6}>
-      {CustomersData.data.map((customer) => {
+    <Box pb={13}>
+      {Customers.data.map((customer) => {
         return <Item key={customer.id} customer={customer} />;
       })}
       <TagsLabel />
@@ -28,9 +29,15 @@ const List = () => {
 
 const Item = ({ customer }: { customer: Customer }) => {
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const onClickItem = () => {
+    navigate(`./details/${customer.id}`);
+  };
 
   return (
     <Box
+      onClick={onClickItem}
       display={"flex"}
       justifyContent={"space-between"}
       borderTop={`1px solid ${theme.palette.common.black}`}
@@ -113,7 +120,7 @@ const TagsLabel = () => {
       sx={{ backgroundColor: theme.palette.primary.main }}
     >
       <TagsLabelItem title={"سفارش"} icon={ShoppingCartIcon} />
-      <TagsLabelItem title={'عدم سفارش"'} icon={ProductionQuantityLimitsIcon} />
+      <TagsLabelItem title={"عدم سفارش"} icon={ProductionQuantityLimitsIcon} />
       <TagsLabelItem title={"مختصات"} icon={LocationOnIcon} />
       <TagsLabelItem title={"ویزیت شده"} icon={RemoveRedEyeIcon} />
     </Box>
