@@ -1,0 +1,40 @@
+import IInventoryReceiptDetail from "./inventoryReceiptDetail";
+
+export default interface IInventoryReceipt {
+    id: number;
+    code?: number;
+    inventoryId?: number;
+    creatorId: number;
+    receiveDate?: Date;
+    farsiReceiveDate?: string;
+    senderEmployeeId?: number;
+    receiverEmployeeId?: number;
+    relatedClassId?: number;
+    relatedOrganizationId?: number;
+    typeId?: number;
+    formId?: number;
+    formTypeId?: number;
+    createDate: Date;
+    farsiCreateDate?: string;
+    notes: string;
+    contractId?: number;
+    manualCode?: string;
+    seqInActCalc?: number;
+    relatedAccountId?: number;
+    relatedClassId1?: number;
+    relatedObjectId1?: number;
+    relatedClassId2?: number;
+    relatedObjectId2?: number;
+    relatedClassId3?: number;
+    relatedObjectId3?: number;
+    relatedAccountDebId?: number;
+    relatedClassDebId1?: number;
+    relatedObjectDebId1?: number;
+    relatedClassDebId2?: number;
+    relatedObjectDebId2?: number;
+    relatedClassDebId3?: number;
+    relatedObjectDebId3?: number;
+    stateId?: number;
+    branchId?: number;
+    inventoryReceiptDetail: IInventoryReceiptDetail[];
+}

@@ -1,0 +1,41 @@
+import IAtashFormPermission from "./atashFormPermission";
+import IAtashSystem from "./atashSystem";
+import IRolePermissionOnForm from "./rolePermissionOnForm";
+import IUser from "./user";
+
+export default interface IAtashFormType {
+    id: number;
+    systemId?: number;
+    name: string;
+    fileName: string;
+    participateInWorkFlow?: number;
+    hasAutomaticFlow?: number;
+    notes: string;
+    securityTypeId?: number;
+    isSystemBuilt?: boolean;
+    creatorId?: number;
+    createDate?: Date;
+    farsiCreateDate: string;
+    isCorrect?: boolean;
+    searchReportId?: number;
+    checkEditingPermission?: number;
+    formLayoutTypeId?: number;
+    printable?: boolean;
+    majorView: string;
+    minorView: string;
+    colsNumber?: number;
+    affectOnAccountingSystem?: number;
+    isGeneral?: boolean;
+    codingMethodTypeId?: number;
+    makeDelimiter?: boolean;
+    createDateVisible?: boolean;
+    alias?: number;
+    fullName?: number;
+    makeHide?: boolean;
+    sequence?: number;
+    hasImage?: boolean;
+    creator: IUser;
+    system: IAtashSystem;
+    tblAtashFormPermission: IAtashFormPermission[];
+    tblRolePermissionOnForm: IRolePermissionOnForm[];
+}
